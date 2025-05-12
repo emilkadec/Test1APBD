@@ -22,7 +22,7 @@ public class AppointmentsController : ControllerBase
         return result;
     }
 
-    [HttpPost]
+    [HttpPost("create")]
     public async Task<IActionResult> CreateAppointment([FromBody] CreateAppointmentDTO DTOcreateAppointment)
     {
         var result = await _appointmentsService.CreateAppointment(DTOcreateAppointment);
