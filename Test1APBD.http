@@ -1,6 +1,23 @@
-@Test1_HostAddress = http://localhost:1433
+@Test1APBD_HostAddress = http://localhost:1433
 
-GET {{Test1_HostAddress}}/application/
+GET {{Test1APBD_HostAddress}}/application/appointments/1
 Accept: application/json
 
-###
+POST {{Test1APBD_HostAddress}}/application/appointments
+Content-Type: application/json
+
+{
+"appointmentId": 10,
+"patientId": 1,
+"pwz": "PWZ5678",
+"services": [
+{
+"serviceName": "Consultation",
+"serviceFee": 110.00
+},
+{
+"serviceName": "ECG",
+"serviceFee": 70.00
+}
+]
+}
